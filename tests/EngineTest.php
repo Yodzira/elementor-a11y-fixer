@@ -11,8 +11,8 @@ class EngineTest extends TestCase {
 <!DOCTYPE html><html><head><title>Elementor page</title></head><body>
 <div class="elementor elementor-123">
  <div class="elementor-swiper-wrapper">
-  <a href="#" class="elementor-swiper-button-prev" role="button"></a>
-  <a href="#" class="elementor-swiper-button-next" role="button"></a>
+  <div class="elementor-swiper-button elementor-swiper-button-prev" role="button" tabindex="0"></div>
+  <div class="elementor-swiper-button elementor-swiper-button-next" role="button" tabindex="0"></div>
  </div>
  <div class="elementor-accordion">
   <div class="elementor-accordion-item"><div class="elementor-tab-title" data-tab="1">Prices</div></div>
@@ -67,7 +67,7 @@ HTML;
 	public function test_golden_master_no_unexpected_changes() {
 		$allow = array(
 			'a'     => array( 'aria-label', 'aria-expanded' ),
-			'div'   => array( 'aria-expanded' ),
+			'div'   => array( 'aria-expanded', 'aria-label' ), // Real swiper arrows are divs role="button".
 			'img'   => array( 'alt' ),
 			'html'  => array(),
 		);

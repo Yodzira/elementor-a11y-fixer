@@ -105,17 +105,16 @@ class EAF_Engine {
 			'elementor-swiper-button-prev' => 'Previous slide',
 			'elementor-swiper-button-next' => 'Next slide',
 		);
-		foreach ( $dom->getElementsByTagName( 'a' ) as $a ) {
-			if ( ! $a instanceof DOMElement || 'a' !== strtolower( $a->tagName ) ) {
-				continue;
-			}
-			$class = (string) $a->getAttribute( 'class' );
-			foreach ( $map as $needle => $label ) {
-				if ( '' !== trim( (string) $a->getAttribute( 'aria-label' ) ) || false === strpos( $class, $needle ) ) {
+		// Real Elementor renders swiper arrows as div role="button" (or a
+		// link in some versions) — match ANY tag carrying the class.
+		$xpath = new DOMXPath( $dom );
+		foreach ( $map as $needle => $label ) {
+			foreach ( $xpath->query( '//*[contains(@class,"' . $needle . '")]' ) as $el ) {
+				if ( ! $el instanceof DOMElement || '' !== trim( (string) $el->getAttribute( 'aria-label' ) ) ) {
 					continue;
 				}
-				$a->setAttribute( 'aria-label', $label );
-				$out[] = array( 'target' => 'a.' . $needle, 'attr' => 'aria-label', 'before' => '', 'after' => $label );
+				$el->setAttribute( 'aria-label', $label );
+				$out[] = array( 'target' => '.' . $needle, 'attr' => 'aria-label', 'before' => '', 'after' => $label );
 			}
 		}
 
