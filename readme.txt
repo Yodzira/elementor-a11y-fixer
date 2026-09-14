@@ -23,6 +23,13 @@ Generic accessibility plugins give generic advice. This one knows Elementor mark
 
 Works standalone; pairs with A11yFix for the full audit.
 
+== Pro Version ==
+
+Pro adds automation, reports and integrations on top of the free version
+(one license = one site, 12 months of updates):
+
+https://yodsira.duckdns.org/buy/elementor-a11y
+
 == Installation ==
 
 1. Install and activate (Elementor required for effect).
