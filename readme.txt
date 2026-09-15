@@ -1,5 +1,5 @@
 === Elementor A11y Fixer ===
-Contributors: yodzira
+Contributors: yodsira
 Tags: accessibility, elementor, wcag, slider, accordion
 Requires at least: 6.0
 Tested up to: 7.1
