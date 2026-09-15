@@ -42,4 +42,4 @@
 
 GPL-2.0-or-later (совместимо с WordPress).
 
-💰 **[Купить Pro / Buy Pro — 4 990 ₽/год](https://yodsira.duckdns.org/buy/elementor-a11y)** — лицензия на 1 сайт, 12 месяцев обновлений.
+💰 **[Купить Pro / Buy Pro — 4 990 ₽/год](https://yodsira.com/buy/elementor-a11y)** — лицензия на 1 сайт, 12 месяцев обновлений.
